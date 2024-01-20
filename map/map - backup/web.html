@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <link href="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.css" rel="stylesheet" />
+    <style>
+      body { margin: 0; }
+      #map { height: 100vh; }
+    </style>
+  </head>
+  <body>
+    <div id="map" />
+    <script src="https://unpkg.com/maplibre-gl@3.x/dist/maplibre-gl.js"></script>
+    <script>
+      const apiKey = "v1.public.eyJqdGkiOiJhNWZjOTE5YS01YmM3LTQwMzEtYmMwNy03ZGQ3MzgxZjAwNzUifaJM68IOHAHAxacGSKnhYY3gFgb9s9qxeSoLRenO-Ca-XeKLZARZIjT2tVATThpzmbuNz_zIHQEag7H21PF758BXNnY3kyQeqhRvz_TDbweSix_JUAb1pVOG7_sYe1ZsF7zUdjLsiADsiilKPQD3oftK9MpGc2vEgqjSR3Fq9NMy9oMokKkxKCFrjXi2xFrg0s3D9dIx93VoKfsO_E91Kfe3NiDAq7kMbLFn3SPDvD0Kjdkv4_fiUImzNd4eItYbkkyB0kUI1EELgxeeNYwpkwT1VWt0BaeozUzhVyWRtVUpKgOq0KFXGqd3o3ESa4_OVED-yB-vEkGlawKmETci_Tw.ZGQzZDY2OGQtMWQxMy00ZTEwLWIyZGUtOGVjYzUzMjU3OGE4";
+      const mapName = "simra-map";
+      const region = "eu-west-1";
+
+      const map = new maplibregl.Map({
+        container: "map",
+        style: `https://maps.geo.${region}.amazonaws.com/maps/v0/maps/${mapName}/style-descriptor?key=${apiKey}`,
+        center: [25.08504994, -28.997182288],
+        zoom: 11,
+      });
+      map.addControl(new maplibregl.NavigationControl(), "top-left");
+    </script>
+  </body>
+</html>
